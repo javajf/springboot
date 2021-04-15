@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springboot_demo01.mapper.UserMapper">
+    <select id="queryUserList" resultType="string">
+        select username from user
+    </select>
+
+    <select id="queryUserListLike" parameterType="string" resultType="string">
+        select username from user where username like '%${value}%'
+    </select>
+
+    <select id="queryUserListOne" resultType="user">
+        select * from user
+    </select>
+
+    <select id="queryUserListSecond" resultType="map">
+        select * from user
+    </select>
+
+    <select id="queryUserListThird" parameterType="map" resultType="map">
+        select * from user where 1=1
+        <if test="username != '' and username != null">
+            and username = #{username}
+        </if>
+    </select>
+    <insert id="insertUserFour">
+        INSERT INTO `test`.`user` (  `username`, `birthday`, `sex`, `address` )
+  VALUES
+	( #{username}, #{birthday}, #{sex}, #{address} )
+    </insert>
+
+    <update id="updateUserFour" parameterType="long" >
+        UPDATE `test`.`user`
+        SET `username` = 'jj'
+        WHERE
+            `id` = #{id}
+    </update>
+
+    <delete id="updateUserSex" parameterType="long">
+        DELETE FROM `test`.`user` WHERE `id` = #{id}
+    </delete>
+</mapper>
