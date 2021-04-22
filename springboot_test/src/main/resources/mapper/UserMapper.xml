@@ -40,4 +40,8 @@
     <delete id="updateUserSex" parameterType="long">
         DELETE FROM `test`.`user` WHERE `id` = #{id}
     </delete>
+
+    <select id="queryUserMap" resultType="map" >
+        select username as "UserName" from user
+    </select>
 </mapper>

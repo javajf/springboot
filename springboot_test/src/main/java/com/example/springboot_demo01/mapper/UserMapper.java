@@ -26,4 +26,6 @@ public interface UserMapper {
     void updateUserFour(Long id);
 
     void updateUserSex(Long id);
+
+    List<Map<String,Object>> queryUserMap();
 }
