@@ -3,7 +3,6 @@ package com.example.springboot_demo01.controller;
 import com.example.springboot_demo01.domain.User;
 import com.example.springboot_demo01.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
