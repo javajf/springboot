@@ -68,7 +68,7 @@ public class MapperController {
     @RequestMapping("/queryUser7")
     public List<String> queryUserSeven(){
 
-        List<String> users = userMapper.queryUserListLike("j");
+        List<String> users = userMapper.queryUserListLike("%j%");
         return users;
     }
 

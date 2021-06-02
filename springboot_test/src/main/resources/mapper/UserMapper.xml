@@ -7,7 +7,7 @@
     </select>
 
     <select id="queryUserListLike" parameterType="string" resultType="string">
-        select username from user where username like '%${value}%'
+        select username from user where username like #{value}
     </select>
 
     <select id="queryUserListOne" resultType="user">
