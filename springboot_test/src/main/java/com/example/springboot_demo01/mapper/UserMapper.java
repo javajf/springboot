@@ -30,4 +30,6 @@ public interface UserMapper {
     void updateUserSex(Long id);
 
     List<Map<String,Object>> queryUserMap();
+
+    public List<Map<String,Object>> queryOracleUserList();
 }

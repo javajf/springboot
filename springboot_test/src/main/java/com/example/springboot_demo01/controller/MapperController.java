@@ -79,6 +79,12 @@ public class MapperController {
         return users;
     }
 
+    @RequestMapping("/queryUser9")
+    public List<Map<String,Object>> queryOracleUser(){
+        List<Map<String,Object>> users = userMapper.queryOracleUserList();
+        return users;
+    }
+
     @PostMapping(value = "/test")
     public String test(String input)
     {

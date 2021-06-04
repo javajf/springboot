@@ -44,4 +44,8 @@
     <select id="queryUserMap" resultType="map" >
         select username as "UserName" from user
     </select>
+
+    <select id="queryOracleUserList" resultType="map">
+        SELECT * FROM "USERS"
+    </select>
 </mapper>
