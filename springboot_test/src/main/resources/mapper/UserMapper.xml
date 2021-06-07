@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.springboot_demo01.mapper.UserMapper">
     <select id="queryUserList" resultType="string">
-        select username from user
+        select username from userw
     </select>
 
     <select id="queryUserListLike" parameterType="string" resultType="string">

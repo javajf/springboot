@@ -3,6 +3,7 @@ package com.example.springboot_demo01.controller;
 import com.example.springboot_demo01.domain.User;
 import com.example.springboot_demo01.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -12,6 +13,9 @@ import java.util.Map;
 
 @RestController
 public class MapperController {
+
+    @Value("${user.userName}")
+    private String userName;
 
     @Autowired
     private UserMapper userMapper;
@@ -83,6 +87,11 @@ public class MapperController {
     public List<Map<String,Object>> queryOracleUser(){
         List<Map<String,Object>> users = userMapper.queryOracleUserList();
         return users;
+    }
+
+    @RequestMapping("/queryUser10")
+    public String queryValueName(){
+        return userName;
     }
 
     @PostMapping(value = "/test")
