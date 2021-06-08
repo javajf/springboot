@@ -2,6 +2,8 @@ package com.example.springboot_demo01.controller;
 
 import com.example.springboot_demo01.domain.User;
 import com.example.springboot_demo01.mapper.UserMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,8 @@ import java.util.Map;
 
 @RestController
 public class MapperController {
+
+    Logger logger = LoggerFactory.getLogger(MapperController.class);
 
     @Value("${user.userName}")
     private String userName;
@@ -91,6 +95,7 @@ public class MapperController {
 
     @RequestMapping("/queryUser10")
     public String queryValueName(){
+        logger.info("测试=====================>");
         return userName;
     }
 
