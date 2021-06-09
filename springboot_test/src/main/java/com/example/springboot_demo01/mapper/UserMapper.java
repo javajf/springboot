@@ -32,4 +32,6 @@ public interface UserMapper {
     List<Map<String,Object>> queryUserMap();
 
     public List<Map<String,Object>> queryOracleUserList();
+
+    List<Map<String,Object>> queryUserForResultMap();
 }

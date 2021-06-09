@@ -48,4 +48,15 @@
     <select id="queryOracleUserList" resultType="map">
         SELECT * FROM "USERS"
     </select>
+
+    <resultMap id="userMap" type="HashMap">
+        <result column="id" property="Id"></result>
+        <result column="username" property="Username"></result>
+        <result column="birthday" property="Birthday"></result>
+        <result column="sex" property="Sex"></result>
+        <result column="address" property="Address"></result>
+    </resultMap>
+    <select id="queryUserForResultMap" resultMap="userMap">
+        select * from user
+    </select>
 </mapper>

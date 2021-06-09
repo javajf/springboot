@@ -99,6 +99,14 @@ public class MapperController {
         return userName;
     }
 
+    @RequestMapping("/queryUser11")
+    public List<Map<String,Object>> queryUserForResultMap(){
+        List<Map<String,Object>> users = userMapper.queryUserForResultMap();
+        return users;
+    }
+
+
+
     @PostMapping(value = "/test")
     public String test(String input)
     {
